@@ -9,8 +9,9 @@ const {
 } = require('../controllers/messageController');
 const { protect } = require('../middleware/authMiddleware');
 
-// Public route - accessible without authentication
+// Public routes - accessible without authentication
 router.post('/', createMessage);
+router.post('/contact', createMessage); // Added route for /contact
 
 // Protected routes - require admin authentication
 router.get('/', protect, getMessages);
