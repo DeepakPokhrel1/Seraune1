@@ -20,7 +20,7 @@ const MessagesPage = () => {
     // Fetch messages
     const fetchMessages = async () => {
       try {
-        const response = await axios.get('http://localhost:8000/api/messages', {
+        const response = await axios.get('https://seraune1-backend.onrender.com/api/messages', {
           headers: {
             Authorization: `Bearer ${token}`
           }
