@@ -1,0 +1,363 @@
+/* Dashboard.css */
+
+.admin-container {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f8fafc;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .loading-container {
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Sidebar styles */
+  .admin-sidebar {
+    width: 260px;
+    background-color: #1e293b;
+    color: #e2e8f0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+  }
+  
+  .admin-logo {
+    padding: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .admin-logo h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+  }
+  
+  .admin-menu {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+  }
+  
+  .menu-item {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    position: relative;
+  }
+  
+  .menu-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .menu-item.active {
+    background-color: #3b82f6;
+    color: white;
+  }
+  
+  .menu-icon {
+    margin-right: 0.75rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  .menu-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .badge {
+    position: absolute;
+    right: 1.5rem;
+    background-color: #ef4444;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.125rem 0.375rem;
+    border-radius: 9999px;
+    min-width: 1.25rem;
+    text-align: center;
+  }
+  
+  .admin-logout {
+    margin-top: auto;
+    padding: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .logout-btn {
+    display: flex;
+    align-items: center;
+    background: none;
+    border: none;
+    color: #e2e8f0;
+    padding: 0.5rem;
+    cursor: pointer;
+    width: 100%;
+    font-size: 0.875rem;
+    transition: color 0.3s;
+  }
+  
+  .logout-btn:hover {
+    color: #ef4444;
+  }
+  
+  .logout-btn svg {
+    width: 18px;
+    height: 18px;
+    margin-right: 0.5rem;
+  }
+  
+  /* Content area styles */
+  .admin-content {
+    flex: 1;
+    padding: 2rem;
+    overflow-y: auto;
+  }
+  
+  .admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  
+  .admin-header h1 {
+    margin: 0;
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: #1e293b;
+  }
+  
+  .admin-user {
+    font-size: 0.875rem;
+    color: #64748b;
+  }
+  
+  /* Dashboard cards */
+  .dashboard-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .dashboard-card {
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .dashboard-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-icon {
+    width: 48px;
+    height: 48px;
+    background-color: #eff6ff;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+  }
+  
+  .card-icon svg {
+    width: 24px;
+    height: 24px;
+    color: #3b82f6;
+  }
+  
+  .card-icon.unread {
+    background-color: #fef2f2;
+  }
+  
+  .card-icon.unread svg {
+    color: #ef4444;
+  }
+  
+  .card-content {
+    flex: 1;
+  }
+  
+  .card-content h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #64748b;
+  }
+  
+  .card-number {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1e293b;
+  }
+  
+  /* Admin settings */
+  .admin-settings {
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+  }
+  
+  .admin-settings h2 {
+    margin: 0 0 1.5rem 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1e293b;
+  }
+  
+  .settings-form {
+    display: grid;
+    gap: 1.5rem;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group label {
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #64748b;
+  }
+  
+  .form-group input {
+    padding: 0.75rem 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    transition: border-color 0.3s;
+  }
+  
+  .form-group input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  }
+  
+  .submit-btn {
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 0.375rem;
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 0.5rem;
+  }
+  
+  .submit-btn:hover {
+    background-color: #2563eb;
+  }
+  
+  /* Alert messages */
+  .error-message,
+  .success-message {
+    display: flex;
+    align-items: flex-start;
+    padding: 1rem;
+    border-radius: 0.375rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .error-message {
+    background-color: #fef2f2;
+    border-left: 4px solid #ef4444;
+  }
+  
+  .error-message svg {
+    width: 20px;
+    height: 20px;
+    color: #ef4444;
+    margin-right: 0.75rem;
+    flex-shrink: 0;
+  }
+  
+  .success-message {
+    background-color: #f0fdf4;
+    border-left: 4px solid #22c55e;
+  }
+  
+  .success-message svg {
+    width: 20px;
+    height: 20px;
+    color: #22c55e;
+    margin-right: 0.75rem;
+    flex-shrink: 0;
+  }
+  
+  .error-message p,
+  .success-message p {
+    margin: 0;
+    font-size: 0.875rem;
+  }
+  
+  /* Loading spinner */
+  .loading-spinner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .spinner {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 3px solid rgba(59, 130, 246, 0.1);
+    border-top-color: #3b82f6;
+    animation: spin 1s linear infinite;
+    margin-bottom: 1rem;
+  }
+  
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .admin-container {
+      flex-direction: column;
+    }
+    
+    .admin-sidebar {
+      width: 100%;
+      height: auto;
+      position: static;
+    }
+    
+    .admin-menu {
+      margin: 1rem 0;
+    }
+    
+    .admin-logout {
+      padding: 1rem;
+    }
+    
+    .admin-content {
+      padding: 1rem;
+    }
+    
+    .dashboard-cards {
+      grid-template-columns: 1fr;
+    }
+  }

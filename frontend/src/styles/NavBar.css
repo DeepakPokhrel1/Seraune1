@@ -1,0 +1,269 @@
+/* Modern Navbar Styles with Logo and Consistent Navigation */
+
+.modern-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(229, 231, 235, 0.5);
+}
+
+.modern-header.scrolled {
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+  padding: 0.8rem 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.modern-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+}
+
+/* Logo with Image Styling */
+.navbar-logo {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  position: relative;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.company-logo {
+  width: 38px;
+  height: 38px;
+  background: linear-gradient(135deg, #4F46E5, #14B8A6);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 800;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 10px rgba(79, 70, 229, 0.2);
+  transition: all 0.3s ease;
+}
+
+.navbar-logo:hover .company-logo {
+  transform: translateY(-3px) rotate(5deg);
+  box-shadow: 0 6px 15px rgba(79, 70, 229, 0.3);
+}
+
+.company-name {
+  font-size: 1.75rem;
+  font-weight: 800;
+  background: linear-gradient(to right, #4F46E5, #14B8A6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.03em;
+  transition: all 0.3s ease;
+}
+
+/* Navigation Menu */
+.navbar-menu {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  margin-right: 1rem;
+}
+
+.navbar-nav {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 2rem;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-link {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0F172A;
+  text-decoration: none;
+  padding: 0.5rem 0;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, #4F46E5, #14B8A6);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+  border-radius: 2px;
+}
+
+.nav-link:hover, 
+.nav-link.active {
+  color: #4F46E5;
+}
+
+.nav-link:hover::after, 
+.nav-link.active::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Mobile Menu Button */
+.navbar-actions {
+  display: flex;
+  align-items: center;
+}
+
+.menu-button {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.menu-button-bar {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, #4F46E5, #14B8A6);
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+.menu-button.is-active .menu-button-bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.menu-button.is-active .menu-button-bar:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-button.is-active .menu-button-bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Menu Overlay */
+.menu-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(5px);
+  z-index: -1;
+}
+
+/* Responsive Styles */
+@media (max-width: 991px) {
+  .company-name {
+    font-size: 1.5rem;
+  }
+  
+  .company-logo {
+    width: 34px;
+    height: 34px;
+    font-size: 1.3rem;
+  }
+  
+  .navbar-nav {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-button {
+    display: flex;
+  }
+  
+  .navbar-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 300px;
+    height: 100vh;
+    background: white;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 5rem 2rem 2rem;
+    transition: right 0.3s ease;
+    z-index: 1001;
+    margin-right: 0;
+  }
+  
+  .navbar-menu.menu-active {
+    right: 0;
+  }
+  
+  .menu-active .menu-overlay {
+    display: block;
+  }
+  
+  .navbar-nav {
+    flex-direction: column;
+    width: 100%;
+    gap: 1.5rem;
+  }
+  
+  .nav-item {
+    width: 100%;
+  }
+  
+  .nav-link {
+    font-size: 1.1rem;
+    padding: 0.5rem 0;
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  .modern-navbar {
+    height: 50px;
+  }
+  
+  .company-name {
+    font-size: 1.3rem;
+  }
+  
+  .company-logo {
+    width: 30px;
+    height: 30px;
+    font-size: 1.1rem;
+  }
+  
+  .modern-header {
+    padding: 0.7rem 0;
+  }
+}

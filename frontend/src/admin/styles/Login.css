@@ -1,0 +1,210 @@
+/* Login.css */
+
+/* Base styles and reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+  }
+  
+  /* Login container - takes up full viewport */
+  .login-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4ecfb 100%);
+    padding: 2rem 1rem;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Decorative background shape */
+  .background-shape {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 250px;
+    background: linear-gradient(to right, #4568dc, #6e5de7);
+    border-radius: 0 0 50% 50% / 0 0 100% 100%;
+    transform: translateY(-40%);
+    opacity: 0.7;
+    z-index: 1;
+  }
+  
+  /* Login card container */
+  .login-card {
+    width: 100%;
+    max-width: 450px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    z-index: 2;
+  }
+  
+  /* Login header with gradient background */
+  .login-header {
+    padding: 2rem;
+    background: linear-gradient(to right, #4568dc, #6e5de7);
+    color: white;
+    text-align: center;
+  }
+  
+  .login-header h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+  
+  .login-header p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+  }
+  
+  /* Login form container */
+  .login-body {
+    padding: 2rem;
+  }
+  
+  /* Form group styling */
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-group label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #4a5568;
+    margin-bottom: 0.5rem;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    background-color: #f9fafb;
+    transition: all 0.3s ease;
+  }
+  
+  .form-group input:focus {
+    outline: none;
+    border-color: #4568dc;
+    box-shadow: 0 0 0 3px rgba(69, 104, 220, 0.2);
+  }
+  
+  .form-group input::placeholder {
+    color: #a0aec0;
+  }
+  
+  .form-group input:disabled {
+    background-color: #edf2f7;
+    cursor: not-allowed;
+  }
+  
+  /* Error message styling */
+  .error-message {
+    display: flex;
+    align-items: flex-start;
+    padding: 1rem;
+    background-color: #fef2f2;
+    border-left: 4px solid #f87171;
+    border-radius: 6px;
+    margin-bottom: 1.5rem;
+  }
+  
+  .error-message svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: #ef4444;
+    flex-shrink: 0;
+  }
+  
+  .error-message p {
+    margin-left: 0.75rem;
+    color: #b91c1c;
+    font-size: 0.875rem;
+  }
+  
+  /* Submit button */
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: white;
+    background-color: #4568dc;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #3b57c9;
+  }
+  
+  button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(69, 104, 220, 0.4);
+  }
+  
+  button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+  
+  /* Loading spinner */
+  .spinner {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.5rem;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* Footer */
+  .login-footer {
+    margin-top: 2rem;
+    font-size: 0.75rem;
+    color: #718096;
+    text-align: center;
+    z-index: 2;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 640px) {
+    .login-card {
+      box-shadow: none;
+    }
+    
+    .login-header {
+      padding: 1.5rem;
+    }
+    
+    .login-body {
+      padding: 1.5rem;
+    }
+  }
