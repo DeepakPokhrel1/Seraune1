@@ -29,7 +29,7 @@ const Dashboard = () => {
 
       try {
         // Fetch admin info
-        const response = await axios.get('http://localhost:8000/api/admin/profile', {
+        const response = await axios.get('https://seraune1-backend.onrender.com/api/admin/profile', {
           headers: {
             Authorization: `Bearer ${token}`
           }
@@ -42,7 +42,7 @@ const Dashboard = () => {
         }));
         
         // Fetch message stats
-        const messagesResponse = await axios.get('http://localhost:8000/api/messages', {
+        const messagesResponse = await axios.get('https://seraune1-backend.onrender.com/api/messages', {
           headers: {
             Authorization: `Bearer ${token}`
           }
@@ -89,7 +89,7 @@ const Dashboard = () => {
     try {
       const token = localStorage.getItem('adminToken');
       const response = await axios.put(
-        'http://localhost:8000/api/admin/update-credentials',
+        'https://seraune1-backend.onrender.com/api/admin/update-credentials',
         {
           currentPassword: credentials.currentPassword,
           newUsername: credentials.newUsername,
