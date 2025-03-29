@@ -16,7 +16,7 @@ const Login = () => {
     setIsLoading(true);
 
     try {
-      const response = await axios.post('http://localhost:8000/api/admin/login', {
+      const response = await axios.post('https://seraune1-backend.onrender.com/api/admin/login', {
         username,
         password
       });
