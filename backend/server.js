@@ -45,9 +45,19 @@ app.get('/', (req, res) => {
   });
 });
 
-// Routes - restored the /api prefix to maintain compatibility with frontend
-app.use('/api/messages', require('./routes/messageRoutes'));
+// Set up both API routes and direct routes to handle both patterns
+// Original API routes for admin functionality
 app.use('/api/admin', require('./routes/adminRoutes'));
+
+// API routes for messages
+app.use('/api/messages', require('./routes/messageRoutes'));
+
+// Direct route for the contact form
+app.post('/messages/contact', (req, res) => {
+  // Forward this request to the message controller
+  const { createMessage } = require('./controllers/messageController');
+  createMessage(req, res);
+});
 
 // Error handling middleware
 app.use((err, req, res, next) => {
