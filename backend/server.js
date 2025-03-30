@@ -30,7 +30,12 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: 'https://seraune1-frontend1.onrender.com',
+  origin: [
+    'https://seraune1-frontend1.onrender.com', 
+    'https://seraune.com', 
+    'https://www.seraune.com', 
+    'https://api.seraune.com'
+  ],
   credentials: true
 }));
 
