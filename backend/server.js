@@ -41,13 +41,13 @@ app.use(express.json());
 app.get('/', (req, res) => {
   res.json({ 
     status: 'API is running',
-    message: 'Use /messages or /admin to access the API endpoints'
+    message: 'Use /api/messages or /api/admin to access the API endpoints'
   });
 });
 
-// Routes - removed the /api prefix to match frontend expectations
-app.use('/messages', require('./routes/messageRoutes'));
-app.use('/admin', require('./routes/adminRoutes'));
+// Routes - restored the /api prefix to maintain compatibility with frontend
+app.use('/api/messages', require('./routes/messageRoutes'));
+app.use('/api/admin', require('./routes/adminRoutes'));
 
 // Error handling middleware
 app.use((err, req, res, next) => {
